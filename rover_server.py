@@ -10,25 +10,27 @@ from fastapi.responses import HTMLResponse
 # fast api instantiation
 app = FastAPI()
 
-cors_allowed_origins = [
-    "http://localhost:8000",
-    "http://localhost:3000",
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:3000",
-    "http://localhost:80",
-    "http://127.0.0.1:80",
-    "http://localhost",
-    "null",
-]
+# cors_allowed_origins = [
+#     "http://localhost:8000",
+#     "http://localhost:3000",
+#     "http://127.0.0.1:8000",
+#     "http://127.0.0.1:3000",
+#     "http://localhost:80",
+#     "http://127.0.0.1:80",
+#     "http://localhost",
+#     "null",
+# ]
 
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=cors_allowed_origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=cors_allowed_origins,
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
+
 
 # Creation of the methods
 rover_list = []
@@ -134,7 +136,7 @@ async def get_mine_form():
 </form>
 
     """
-
+# create mine api
 @app.post("/createmines")
 async def create_mine(serial: str, x: int, y: int):
     # Write mine information to the file
